@@ -19,7 +19,7 @@ printQRInTerminal: false
 sock.ev.on("creds.update", saveCreds);
 
 // 🔑 Pairing Code بدل QR
-const phoneNumber = "212613415023"; // ضع رقمك هنا
+const phoneNumber = "212651435709"; // ضع رقمك هنا
 
 setTimeout(async () => {
 
