@@ -18,8 +18,8 @@ printQRInTerminal: false
 // حفظ الجلسة
 sock.ev.on("creds.update", saveCreds);
 
-// 🔑 Pairing Code بدل QR
-const phoneNumber = "212651435709"; // ضع رقمك هنا
+// 🔑 رقمك (معدل)
+const phoneNumber = "212651435709";
 
 setTimeout(async () => {
 
@@ -30,13 +30,14 @@ console.log("=================================");
 console.log("PAIRING CODE:", code);
 console.log("=================================");
 
-} catch (e) {
-console.log("فشل إنشاء كود الربط");
+} catch (err) {
+console.log("❌ خطأ في إنشاء كود الربط");
+console.log(err);
 }
 
 }, 3000);
 
-// 📩 استقبال الرسائل (بدون أوامر إضافية)
+// 📩 استقبال الرسائل
 sock.ev.on("messages.upsert", async ({ messages }) => {
 
 const msg = messages[0];
@@ -50,9 +51,8 @@ if (!text) return;
 
 const from = msg.key.remoteJid;
 
-// رد بسيط فقط
 await sock.sendMessage(from, {
-text: "ان benchemmar بوت ، تم تطويري لتلبية حاجاتكم في الاجابة عن الاسئلة المتعلقة في جميع المجالات ، جرب الدردشة معي الان!!"
+text: "🤖 البوت شغال بنجاح"
 });
 
 });
