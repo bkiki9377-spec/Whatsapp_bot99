@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot",
+  "name": "whatsapp-ai-bot",
   "version": "1.0.0",
   "main": "index.js",
   "type": "commonjs",
@@ -7,7 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "latest"
+    "@google/generative-ai": "^0.24.1",
+    "@whiskeysockets/baileys": "latest",
+    "pino": "^9.0.0"
   },
   "engines": {
     "node": "20.x"
